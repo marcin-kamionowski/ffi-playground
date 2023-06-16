@@ -9,9 +9,10 @@ fn main() {
         .file("src/pingpong.c")
         .compile("pingpong");
 
-    print!("cargo:rerun-if-changed=src/pingpong.c");
+    println!("cargo:rerun-if-changed=src/pingpong.c");
     bindgen::Builder::default().header("src/pingpong.h")
         .clang_arg("-Ipingpong")
+        //.override_abi(abi, arg)
         .layout_tests(true)
         // Tell cargo to invalidate the built crate whenever any of the
         // included header files changed.

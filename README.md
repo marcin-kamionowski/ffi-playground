@@ -7,11 +7,12 @@ Agenda:
   - using submodule to compile own/custom version: example [libbpf-sys](https://github.com/libbpf/libbpf-sys/tree/master)
   - using library already installed: use[pkg-config](https://crates.io/crates/pkg-config) to find its location (works on Linux)
 - types mapping between C and Rust
-  - simple types
+  - [simple types](https://doc.rust-lang.org/core/ffi/index.html)
   - structs, optional layout tests
   - borowed vs owned strings:
     - [CStr](https://doc.rust-lang.org/std/ffi/struct.CStr.html) vs [CString](https://doc.rust-lang.org/std/ffi/struct.CString.html)
     - [OsStr](https://doc.rust-lang.org/std/ffi/struct.OsStr.html) vs [OsString](https://doc.rust-lang.org/std/ffi/struct.OsString.html)
+  - [ABI](https://doc.rust-lang.org/nomicon/ffi.html#foreign-calling-conventions) and [how to override](https://docs.rs/bindgen/latest/bindgen/struct.Builder.html#method.override_abi)
 - lifetime, PhantomData
 - [unsafe function](https://doc.rust-lang.org/std/primitive.pointer.html#method.as_ref) vs unsafe block
 - traits: [Drop](https://doc.rust-lang.org/std/ops/trait.Drop.html)

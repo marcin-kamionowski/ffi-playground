@@ -110,10 +110,12 @@ mod tests {
     #[test]
     fn null_pointer() {
         let p: *mut i32 = std::ptr::null_mut();
+        println!("Addr: {:?}", p);
         assert!(p.is_null());
 
         let i = 0;
         let p: *const i32 = std::ptr::addr_of!(i);
+        println!("Addr: {:?}", p);
         assert!(!p.is_null());
     }
 
