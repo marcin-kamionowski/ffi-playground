@@ -4,7 +4,7 @@ Agenda:
 - [workspace](Cargo.toml) members convention (-sys crate, single target dir)
 - how [build scipt](pingpong-sys/build.rs) works, script output and [ENVs](https://doc.rust-lang.org/cargo/reference/build-scripts.html#outputs-of-the-build-script) used, caching build results
 - how to generate binding for external libraries:
-  - using submodule to compile own/custom version: example [libbpf-sys](https://github.com/libbpf/libbpf-sys/tree/master)
+  - using git submodule to compile own/custom version: example [libbpf-sys](https://github.com/libbpf/libbpf-sys/tree/master)
   - using library already installed: use[pkg-config](https://crates.io/crates/pkg-config) to find its location (works on Linux)
 - types mapping between C and Rust
   - [simple types](https://doc.rust-lang.org/core/ffi/index.html)

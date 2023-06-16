@@ -1,4 +1,5 @@
 use libc;
+use libc::c_char;
 use pingpong_sys::*;
 use std::ffi::c_void;
 use std::ffi::CStr;
@@ -20,9 +21,9 @@ pub fn pong_str(ping: &str) -> String {
     pong
 }
 
-pub fn pong_char(ping: i8) -> String {
+pub fn pong_char(ping: u8) -> String {
     let cstr = unsafe {
-        let ptr = pong(ping as *mut i8);
+        let ptr = pong(ping as *mut c_char);
         CStr::from_ptr(ptr)
     };
     let pong = cstr.to_str().unwrap().to_owned();
@@ -77,6 +78,7 @@ impl<'a> Buffer<'a> {
 impl Drop for Session {
     fn drop(&mut self) {
         unsafe { stop(self.ptr) }
+        println!("Dropped")
     }
 }
 
@@ -141,6 +143,7 @@ mod tests {
         let buffer = session.buffer();
 
         assert_eq!(buffer.data(), "Buffer data");
+        println!("End")
     }
 
     //#[test]
