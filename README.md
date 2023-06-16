@@ -2,7 +2,7 @@ Agenda:
 - goal of this project: compile C library, generate Rust wrapper
 - raw pointers casting, arithmetics
 - [workspace](Cargo.toml) members convention (-sys crate, single target dir)
-- how [build scipt](pingpong-sys/build.rs) works, caching build results
+- how [build scipt](pingpong-sys/build.rs) works, script output and [ENVs](https://doc.rust-lang.org/cargo/reference/build-scripts.html#outputs-of-the-build-script) used, caching build results
 - how to generate binding for external libraries:
   - using submodule to compile own/custom version: example [libbpf-sys](https://github.com/libbpf/libbpf-sys/tree/master)
   - using library already installed: use[pkg-config](https://crates.io/crates/pkg-config) to find its location (works on Linux)
