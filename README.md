@@ -1,5 +1,6 @@
 Agenda:
 - goal of this project: compile C library, generate Rust wrapper
+- raw pointers casting, arithmetics
 - [workspace](Cargo.toml) members convention (-sys crate, single target dir)
 - how [build scipt](pingpong-sys/build.rs) works, caching build results
 - how to generate binding for external libraries:
@@ -11,4 +12,6 @@ Agenda:
   - borowed vs owned strings:
     - [CStr](https://doc.rust-lang.org/std/ffi/struct.CStr.html) vs [CString](https://doc.rust-lang.org/std/ffi/struct.CString.html)
     - [OsStr](https://doc.rust-lang.org/std/ffi/struct.OsStr.html) vs [OsString](https://doc.rust-lang.org/std/ffi/struct.OsString.html)
- 
+- lifetime, PhantomData
+- [unsafe function](https://doc.rust-lang.org/std/primitive.pointer.html#method.as_ref) vs unsafe block
+- traits: [Drop](https://doc.rust-lang.org/std/ops/trait.Drop.html)

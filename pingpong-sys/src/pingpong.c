@@ -30,12 +30,16 @@ t_session* start(){
     return s;
 }
 
-t_buffer* buffer(t_session *session){
+t_buffer* session_buffer(t_session *session){
     return session->buffer;
 }
 
+char* buffer_data(t_buffer *buffer){
+    return buffer->data;
+}
+
 void stop(t_session *session){
-    t_buffer* b = buffer(session);
+    t_buffer* b = session_buffer(session);
     free(b->data);
     free(b);
     free(session);

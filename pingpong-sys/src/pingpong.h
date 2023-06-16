@@ -20,7 +20,8 @@ typedef struct
 } t_buffer;
 
 t_session* start();
-t_buffer* buffer(t_session *session);
+t_buffer* session_buffer(t_session *session);
+char* buffer_data(t_buffer *buffer);
 void stop(t_session *session);
 
 char* pong(char * ping);
